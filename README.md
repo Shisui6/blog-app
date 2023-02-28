@@ -83,7 +83,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/Shisui6/OOP-school-library.git
+  git clone https://github.com/Shisui6/blog-app.git
 ```
 
 ### Install
@@ -91,16 +91,25 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd OOP-school-library
+  cd blog-app
   bundle install
 ```
 
-### Development
+### Usage
+
+To run the project, execute the following command:
 
 ```sh
-  After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+  rails server - Starts the development server
+  rails console - Starts the interactive command line
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec - Runs the test suite
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
