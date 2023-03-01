@@ -16,23 +16,23 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'commentsCounter must be an integer' do
-    subject.commentsCounter = 'hello'
+  it 'comments_counter must be an integer' do
+    subject.comments_counter = 'hello'
     expect(subject).to_not be_valid
   end
 
-  it 'commentsCounter must be greater than or equal to 0' do
-    subject.commentsCounter = -5
+  it 'comments_counter must be greater than or equal to 0' do
+    subject.comments_counter = -5
     expect(subject).to_not be_valid
   end
 
-  it 'likesCounter must be an integer' do
-    subject.likesCounter = 'hello'
+  it 'likes_counter must be an integer' do
+    subject.likes_counter = 'hello'
     expect(subject).to_not be_valid
   end
 
-  it 'likesCounter must be greater than or equal to 0' do
-    subject.likesCounter = -5
+  it 'likes_counter must be greater than or equal to 0' do
+    subject.likes_counter = -5
     expect(subject).to_not be_valid
   end
 
