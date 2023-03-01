@@ -10,13 +10,13 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'postsCounter must be an integer' do
-    subject.postsCounter = 'hello'
+  it 'posts_counter must be an integer' do
+    subject.posts_counter = 'hello'
     expect(subject).to_not be_valid
   end
 
-  it 'postsCounter must be greater than or equal to 0' do
-    subject.postsCounter = -5
+  it 'posts_counter must be greater than or equal to 0' do
+    subject.posts_counter = -5
     expect(subject).to_not be_valid
   end
 
