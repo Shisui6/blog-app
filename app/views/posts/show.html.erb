@@ -9,6 +9,13 @@
   <div class="comment-cont">
     <% @post.comments.each do |comment| %>
       <p><%= comment.user.name %>: <%= comment.text %></p>
+      <%= bootstrap_form_with model: @like, url: "/users/#{@post.user.id}/posts/#{@post.id}/likes", method: :post, local: true do |f| %>
+        <%= f.submit %>
+      <% end %>
     <% end %>
   </div>
+
+  <button>
+    <%= link_to "New Comment", "/users/#{@post.user.id}/posts/#{@post.id}/comments/new", class: 'btn btn-primary' %>
+  </button>
 </div>

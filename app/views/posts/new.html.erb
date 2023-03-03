@@ -1,0 +1,11 @@
+<h1>New Post</h1>
+
+<%= bootstrap_form_with model: @post, url: "/users/#{@id}/posts", method: :post, local: true do |f| %>
+
+  <%= f.text_field :title %>
+  <%= f.text_area :text %>
+  <%= f.hidden_field :comments_counter, value: 0 %>x
+  <%= f.hidden_field :likes_counter, value: 0 %>
+  <%= f.submit %>
+
+<% end %>
