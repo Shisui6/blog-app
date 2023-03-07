@@ -16,7 +16,9 @@
       <h3>Post #<%= post.id %></h3>
       <p><%= post.text %></p>
       <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
-      <%= link_to 'View', "/users/#{@user.id}/posts/#{post.id}" %>
+      <div class="view-post">
+        <%= link_to 'View', "/users/#{@user.id}/posts/#{post.id}" %>
+      </div>
     </div>
     <div class="comment-cont">
       <% post.last_five_comments.each do |comment| %>
