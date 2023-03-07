@@ -6,9 +6,9 @@ RSpec.describe 'Posts', type: :request do
       get user_posts_path user_id: user.id
     end
 
-    after(:example) do 
+    after(:example) do
       Post.destroy_all
-      User.destroy_all 
+      User.destroy_all
     end
 
     it 'is a success' do
@@ -27,9 +27,9 @@ RSpec.describe 'Posts', type: :request do
       get user_post_path user_id: user.id, id: post.id
     end
 
-    after(:example) do 
+    after(:example) do
       Post.destroy_all
-      User.destroy_all 
+      User.destroy_all
     end
 
     it 'is a success' do
