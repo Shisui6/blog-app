@@ -76,3 +76,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.login {
+  margin: 40px;
+  text-align: center;
+}
+
+.login input {
+  width: 100%;
+}
