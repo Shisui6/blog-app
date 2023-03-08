@@ -18,6 +18,12 @@
       <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
       <div class="view-post">
         <%= link_to 'View', "/users/#{@user.id}/posts/#{post.id}" %>
+        <% if can? :destroy, post %>
+          <%= link_to "Delete", user_post_path(@user.id, post.id), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+        <% end %>
       </div>
     </div>
     <div class="comment-cont">

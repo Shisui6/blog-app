@@ -8,6 +8,12 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
 
+  Roles = [ :admin , :default ]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
+
   def last_three_posts
     posts.limit(3).order(created_at: :desc)
   end
