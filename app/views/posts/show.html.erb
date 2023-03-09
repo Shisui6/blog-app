@@ -12,6 +12,12 @@
       <%= bootstrap_form_with model: @like, url: "/users/#{@post.user.id}/posts/#{@post.id}/likes", method: :post, local: true do |f| %>
         <%= f.submit %>
       <% end %>
+      <% if can? :destroy, comment %>
+          <%= link_to "Delete", user_post_comment_path(@post.user.id, @post.id), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+      <% end %>
     <% end %>
   </div>
 

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @posts = Post.where(user_id: params[:user_id]).includes(:comments)
     @user = User.find(params[:user_id])
@@ -6,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
     @like = Like.new
   end
 
@@ -25,9 +28,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    flash[:success] = 'The to-do item was successfully destroyed.'
+    redirect_to user_posts_path user_id: current_user.id
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter).merge(user: current_user)
+    params.require(:post).permit(:title, :text).merge(user: current_user)
   end
 end
