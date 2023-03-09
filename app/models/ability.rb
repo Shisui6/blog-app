@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -31,8 +29,9 @@ class Ability
 
     return unless user.present?
 
-    can(%i[read create update destroy], Post, user:)
-    can(%i[read create update destroy], Comment, user:)
+    can :read, :all
+    can(%i[create update destroy], Post, user:)
+    can(%i[create update destroy], Comment, user:)
 
     return unless user.is? :admin
 

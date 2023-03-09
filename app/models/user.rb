@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
 
-  Roles = %i[admin default]
+  ROLES = %i[admin default].freeze
 
   def is?(requested_role)
     role == requested_role.to_s

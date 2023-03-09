@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_resource
+  load_and_authorize_resource
 
   def index
     @posts = Post.where(user_id: params[:user_id]).includes(:comments)
@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
     @like = Like.new
   end
 
