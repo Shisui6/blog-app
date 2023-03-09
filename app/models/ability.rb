@@ -31,7 +31,8 @@ class Ability
 
     return unless user.present?
 
-    can [:read, :create, :update, :destroy], Post, user: user
+    can(%i[read create update destroy], Post, user:)
+    can(%i[read create update destroy], Comment, user:)
 
     return unless user.is? :admin
 

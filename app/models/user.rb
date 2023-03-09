@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
 
-  Roles = [ :admin , :default ]
+  Roles = %i[admin default]
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 
   def last_three_posts

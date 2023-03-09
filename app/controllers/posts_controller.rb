@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  load_resource
 
   def index
     @posts = Post.where(user_id: params[:user_id]).includes(:comments)
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "The to-do item was successfully destroyed."
+    flash[:success] = 'The to-do item was successfully destroyed.'
     redirect_to user_posts_path user_id: current_user.id
   end
 
